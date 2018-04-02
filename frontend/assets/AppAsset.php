@@ -22,6 +22,7 @@ class AppAsset extends AssetBundle
         'js/amazeui.min.js',
         'js/countUp.min.js',
         'js/amazeui.lazyload.min.js',
+        'js/petshow.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

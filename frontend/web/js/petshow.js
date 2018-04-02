@@ -46,16 +46,8 @@ if($(window).width() < 700 ){
 //@首页 图片列表长宽相等
 
 $(window).resize(function(){
-$('.am_img_bg').height($('.am_img_bg').width());
+// $('.am_img_bg').height($('.am_img_bg').width());
 });
-//@首页 用户名截取
-$('.am_imglist_user_font').each(
-  function(){
-     if($(this).text().length >= 13){
-        $(this).html($(this).text().substr(0,13));
-     }
-  }
-  );
 
 //@懒加载
   $("img.am_img").lazyload();
@@ -63,30 +55,7 @@ $('.am_imglist_user_font').each(
   effect : 'fadeIn'
 });
 
-//@首页 数字跳动
-  var options = {
-  useEasing : true,
-  useGrouping : true,
-  separator : '',
-  decimal : '.',
-  prefix : '',
-  suffix : ''
-};
-var banner_num = new CountUp("banner_num", 956000, 956214, 0, 5, options);
-banner_num.start();
 });
-
-//动画效果
-function OpenDonghua( Chufa,Mubiao,Xiaoguo){
-Chufa.on('mouseover', function(){
-    $(this).find(Mubiao).addClass(Xiaoguo);
-});
-}
-function CloseDonghua(Chufa,Mubiao,Xiaoguo){
-    Chufa.on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-    Mubiao.removeClass(Xiaoguo);
-});
-}
 
 
 

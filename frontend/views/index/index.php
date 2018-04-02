@@ -13,7 +13,7 @@
             <div class="am-gallery-item am_list_block">
                 <a href="###" class="am_img_bg">
                     <img class="am_img animated" src="/img/loading.gif"
-                         data-original="http://img.petshow.cc/pet_show/2015_08/6d3c22171da582f569702bad45d9a4c6.jpg"
+                         data-original="https://qiniu.game.lerzen.com/dota2/loadingscreens/3_heroes_loadingscreen.png"
                          alt="远方 有一个地方 那里种有我们的梦想"/>
                 </a>
 
@@ -28,7 +28,7 @@
             <div class="am-gallery-item am_list_block">
                 <a href="###" class="am_img_bg">
                     <img class="am_img animated" src="/img/loading.gif"
-                         data-original="http://img.petshow.cc/pet_show/2015_08/6d3c22171da582f569702bad45d9a4c6.jpg"
+                         data-original="https://qiniu.game.lerzen.com/dota2/loadingscreens/abyss_tyrant_abyss_tyrant_loadingscreen.png"
                          alt="远方 有一个地方 那里种有我们的梦想"/>
                 </a>
 
@@ -43,7 +43,7 @@
             <div class="am-gallery-item am_list_block">
                 <a href="###" class="am_img_bg">
                     <img class="am_img animated" src="/img/loading.gif"
-                         data-original="http://img.petshow.cc/pet_show/2015_08/6d3c22171da582f569702bad45d9a4c6.jpg"
+                         data-original="https://qiniu.game.lerzen.com/dota2/loadingscreens/acolyte_vengeance_loading_screen.png"
                          alt="远方 有一个地方 那里种有我们的梦想"/>
                 </a>
 
@@ -58,7 +58,7 @@
             <div class="am-gallery-item am_list_block">
                 <a href="###" class="am_img_bg">
                     <img class="am_img animated" src="/img/loading.gif"
-                         data-original="http://img.petshow.cc/pet_show/2015_08/6d3c22171da582f569702bad45d9a4c6.jpg"
+                         data-original="https://qiniu.game.lerzen.com/dota2/loadingscreens/aeol_drias_loading_screen.png"
                          alt="远方 有一个地方 那里种有我们的梦想"/>
                 </a>
 
@@ -73,7 +73,7 @@
             <div class="am-gallery-item am_list_block">
                 <a href="###" class="am_img_bg">
                     <img class="am_img animated" src="/img/loading.gif"
-                         data-original="http://img.petshow.cc/pet_show/2015_08/6d3c22171da582f569702bad45d9a4c6.jpg"
+                         data-original="https://qiniu.game.lerzen.com/dota2/loadingscreens/aesir_lord_odin_loadingscreen.png"
                          alt="远方 有一个地方 那里种有我们的梦想"/>
                 </a>
 
@@ -88,7 +88,7 @@
             <div class="am-gallery-item am_list_block">
                 <a href="###" class="am_img_bg">
                     <img class="am_img animated" src="/img/loading.gif"
-                         data-original="http://img.petshow.cc/pet_show/2015_08/6d3c22171da582f569702bad45d9a4c6.jpg"
+                         data-original="https://qiniu.game.lerzen.com/dota2/loadingscreens/alchemist_convicts_trophy_loading_screen.png"
                          alt="远方 有一个地方 那里种有我们的梦想"/>
                 </a>
 
@@ -103,7 +103,7 @@
             <div class="am-gallery-item am_list_block">
                 <a href="###" class="am_img_bg">
                     <img class="am_img animated" src="/img/loading.gif"
-                         data-original="http://img.petshow.cc/pet_show/2015_08/6d3c22171da582f569702bad45d9a4c6.jpg"
+                         data-original="https://qiniu.game.lerzen.com/dota2/loadingscreens/alliance_abbadon_loadingscreen.png"
                          alt="远方 有一个地方 那里种有我们的梦想"/>
                 </a>
 
@@ -118,7 +118,7 @@
             <div class="am-gallery-item am_list_block">
                 <a href="###" class="am_img_bg">
                     <img class="am_img animated" src="/img/loading.gif"
-                         data-original="http://img.petshow.cc/pet_show/2015_08/6d3c22171da582f569702bad45d9a4c6.jpg"
+                         data-original="https://qiniu.game.lerzen.com/dota2/loadingscreens/alliance_loading_screen.png"
                          alt="远方 有一个地方 那里种有我们的梦想"/>
                 </a>
 
@@ -133,7 +133,7 @@
             <div class="am-gallery-item am_list_block">
                 <a href="###" class="am_img_bg">
                     <img class="am_img animated" src="/img/loading.gif"
-                         data-original="http://img.petshow.cc/pet_show/2015_08/6d3c22171da582f569702bad45d9a4c6.jpg"
+                         data-original="https://qiniu.game.lerzen.com/dota2/loadingscreens/apostle_of_decay_loading_screen.png"
                          alt="远方 有一个地方 那里种有我们的梦想"/>
                 </a>
 
@@ -148,7 +148,7 @@
             <div class="am-gallery-item am_list_block">
                 <a href="###" class="am_img_bg">
                     <img class="am_img animated" src="/img/loading.gif"
-                         data-original="http://img.petshow.cc/pet_show/2015_08/6d3c22171da582f569702bad45d9a4c6.jpg"
+                         data-original="https://qiniu.game.lerzen.com/dota2/loadingscreens/alliance_loading_screen.png"
                          alt="远方 有一个地方 那里种有我们的梦想"/>
                 </a>
 
