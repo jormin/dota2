@@ -10,7 +10,8 @@ return [
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
-            'enableAutoLogin' => false,
+            'enableAutoLogin' => true,
+            'loginUrl' => null
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
