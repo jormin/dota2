@@ -13,10 +13,6 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'defaultRoute'=>'index/index',
     'components' => [
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-        ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
