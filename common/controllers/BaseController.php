@@ -19,8 +19,9 @@ class BaseController extends Controller
     /**
      * 预处理
      *
-     * @param \yii\base\Action $action
+     * @param $action
      * @return bool
+     * @throws \yii\web\BadRequestHttpException
      */
     public function beforeAction($action)
     {
@@ -30,8 +31,8 @@ class BaseController extends Controller
         if(!\Yii::$app->request->isPost){
             $this->error();
         }
-        $post = $this->paramTrim(\Yii::$app->request->post());
-        $this->params = $post;
+        $params = $this->paramTrim(\Yii::$app->request->isGet ? \Yii::$app->request->get() : \Yii::$app->request->post());
+        $this->params = $params;
         Validate::validate($this->params);
         return true;
     }
