@@ -14,13 +14,13 @@ class TestController extends BaseController
         $files = scandir($originPath);
         $transaction = \Yii::$app->db->beginTransaction();
         foreach ($files as $filename){
-            if($filename == '.' || $filename == '..' || is_dir($filename)){
+            if($filename == '.' || $filename == '..' || $filename == '.gitignore' || is_dir($filename)){
                 continue;
             }
             $name = explode('.', $filename)[0];
             $loadScree = new LoadScree();
             $loadScree->name = $name;
-            $loadScree->key = '/dota2/loadingscreens/'.$name;
+            $loadScree->key = '/dota2/loadingscreens/'.$filename;
             if(!$loadScree->save()){
                 $transaction->rollBack();
                 $this->log('保存载入动画【'.$name.'】失败');
