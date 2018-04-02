@@ -32,7 +32,7 @@ ul.am-dropdown-content>li>a:focus, ul.am-dropdown-content>li>a:hover { backgroun
 .amz-container { max-width: 1500px; margin: 0 auto;}
 .am-topbar-logo img{ width: 130px; height: 37px; vertical-align: top; margin-top:7px; }
 .am-list, .am-topbar { margin-bottom: 0;}
-.get {background: url(../img/dota_logo.png) top center no-repeat;color: #fff;text-align: center;height: 278px;}
+.get {background: url(../img/dota_logo.png) top center no-repeat;color: #fff;text-align: center;height: 206px;}
 .get-title {display: inline-block; padding-top: 25px;}
 .get_font_left { width: 112px; height: 115px;float: left;  }
 .get_font_center { width: auto; height: 115px; margin: 0 20px; line-height: 115px; float: left; font-size: 115px; color: #ff5656; font-family: 'avantgarde_md_btmedium';}
@@ -47,7 +47,7 @@ ul.am-dropdown-content>li>a:focus, ul.am-dropdown-content>li>a:hover { backgroun
  .am-btn {  border:none; }
 .banner_navbg { background: url(../img/bannner_smallbg.png) repeat-x; width: 100%; height: 62px;}
 .am-g { max-width: 1500px;}
-.am-imglist { max-width: 1540px; padding: 20px 0;}
+.am-imglist { max-width: 1540px; padding: 20px 0; padding-top: 0;}
 .banner_nav { line-height: 61px; font-size: 12px; margin: 0 10px;}
 .am_list_block { padding: 10px; background: #fff; position: relative; }
 .am_listimg_info { color: #d1d1d1; padding-top: 5px; }
@@ -492,4 +492,10 @@ background-size: 100%; }
 .am_bdfw_block:hover  .am_bdfw_block_r{ background: #e9e9e9;}
 .ztlb_nr_block { height: 270px; padding: 0; margin: 0;}
 .ztlb_nr_block_r_nr { padding-bottom: 0;}
+}
+
+.loading-wrap{
+    text-align: center;
+    padding: 20px;
+    color: #d1d1d1;
 }
