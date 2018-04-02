@@ -28,7 +28,8 @@ class BaseController extends Controller
         if(!parent::beforeAction($action)){
             return false;
         }
-        $params = $this->paramTrim(\Yii::$app->request->isGet ? \Yii::$app->request->get() : \Yii::$app->request->post());
+        $params = \Yii::$app->request->isGet ? \Yii::$app->request->get() : \Yii::$app->request->post();
+        count($params) && $params = $this->paramTrim($params);
         $this->params = $params;
         Validate::validate($this->params);
         return true;
