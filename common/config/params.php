@@ -11,5 +11,8 @@ return [
             'origin' => '',
             'preview' => ''
         ],
+    ],
+    'accessOrigin' => [
+
     ]
 ];
