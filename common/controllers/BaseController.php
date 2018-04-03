@@ -26,8 +26,11 @@ class BaseController extends Controller
     public function beforeAction($action)
     {
         $origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
-        if(in_array($origin, \Yii::$app->params['accessOrigin'])){
-            header('Access-Control-Allow-Origin:'.$origin);
+        foreach (\Yii::$app->params['accessOrigin'] as $accessOrigin){
+            if($origin === $accessOrigin['domain']){
+                $accessOrigin['port'] != 80 && $origin.':'.$accessOrigin['port'];
+                header('Access-Control-Allow-Origin:'.$origin);
+            }
         }
 
         if(!parent::beforeAction($action)){
