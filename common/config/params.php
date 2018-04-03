@@ -9,6 +9,7 @@ return [
         'style' => [
             'thumb' => '',
             'origin' => '',
+            'preview' => ''
         ],
     ]
 ];
