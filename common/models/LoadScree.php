@@ -79,8 +79,10 @@ class LoadScree extends \yii\db\ActiveRecord
             return $data;
         }
         $url = \Yii::$app->params['qiNiu']['domain'].$data['key'];
-        $data['thumb'] = $url.'-thumb';
-        $data['origin'] = $url.'-origin';
+        $styles = \Yii::$app->params['qiNiu']['style'];
+        $data['thumb'] = $url.'-'.$styles['thumb'];
+        $data['origin'] = $url.'-'.$styles['origin'];
+        $data['preview'] = $url.'-'.$styles['preview'];
         return $data;
     }
 }
