@@ -26,7 +26,7 @@ class LoadScreeController extends BaseController
         $query->offset($pagination->offset)->limit($pagination->limit);
         $loadScrees = $query->asArray()->all();
         foreach ($loadScrees as $key => $loadScree){
-            $loadScree = LoadScree::combine($loadScree);
+            $loadScree = LoadScree::combineSimple($loadScree);
             $loadScrees[$key] = $loadScree;
         }
         $data = [
@@ -34,6 +34,25 @@ class LoadScreeController extends BaseController
             'total' => $total,
             'page' => $page,
             'totalPages' => ceil($total/$pageSize),
+        ];
+        $this->success($data);
+    }
+
+    /**
+     * 获取详情
+     */
+    public function actionDetail(){
+        $id = $this->getParam('id');
+        $loadScree = LoadScree::get($id);
+        if(!$loadScree){
+            $this->fail('参数错误');
+        }
+        $prevID = LoadScree::find()->where(['<', 'id', $id])->select('id')->column();
+        $nextID = LoadScree::find()->where(['>', 'id', $id])->select('id')->column();
+        $data = [
+            'loadScree' => $loadScree,
+            'prevID' => $prevID,
+            'nextID' => $nextID,
         ];
         $this->success($data);
     }
