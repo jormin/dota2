@@ -26,7 +26,7 @@ class LoadScreeController extends BaseController
         $query->offset($pagination->offset)->limit($pagination->limit);
         $loadScrees = $query->asArray()->all();
         foreach ($loadScrees as $key => $loadScree){
-            $loadScree = LoadScree::combineSimple($loadScree);
+            $loadScree = LoadScree::combine($loadScree);
             $loadScrees[$key] = $loadScree;
         }
         $data = [
