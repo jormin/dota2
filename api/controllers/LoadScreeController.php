@@ -30,7 +30,7 @@ class LoadScreeController extends BaseController
             $loadScrees[$key] = $loadScree;
         }
         $data = [
-            'loadScrees' => $loadScrees,
+            'item' => $loadScrees,
             'total' => $total,
             'page' => $page,
             'totalPages' => ceil($total/$pageSize),

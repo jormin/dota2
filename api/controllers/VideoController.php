@@ -50,7 +50,7 @@ class VideoController extends BaseController
         $prev = Video::find()->where(['<', 'id', $id])->orderBy('id desc')->one();
         $next = Video::find()->where(['>', 'id', $id])->orderBy('id asc')->one();
         $data = [
-            'video' => $video,
+            'item' => $video,
             'prevID' => $prev ? $prev['id'] : 0,
             'nextID' => $next ? $next['id'] : 0,
         ];
