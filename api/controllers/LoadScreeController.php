@@ -37,4 +37,23 @@ class LoadScreeController extends BaseController
         ];
         $this->success($data);
     }
+
+    /**
+     * 获取详情
+     */
+    public function actionDetail(){
+        $id = $this->getParam('id');
+        $loadScree = LoadScree::get($id);
+        if(!$loadScree){
+            $this->fail('参数错误');
+        }
+        $prev = LoadScree::find()->where(['<', 'id', $id])->orderBy('id desc')->one();
+        $next = LoadScree::find()->where(['>', 'id', $id])->orderBy('id asc')->one();
+        $data = [
+            'loadScree' => $loadScree,
+            'prevID' => $prev ? $prev['id'] : 0,
+            'nextID' => $next ? $next['id'] : 0,
+        ];
+        $this->success($data);
+    }
 }
