@@ -47,8 +47,8 @@ class LoadScreeController extends BaseController
         if(!$loadScree){
             $this->fail('参数错误');
         }
-        $prevID = LoadScree::find()->where(['<', 'id', $id])->select('id')->one();
-        $nextID = LoadScree::find()->where(['>', 'id', $id])->select('id')->one();
+        $prevID = LoadScree::find()->where(['<', 'id', $id])->select('id')->orderBy('id desc')->one();
+        $nextID = LoadScree::find()->where(['>', 'id', $id])->select('id')->orderBy('id asc')->one();
         $data = [
             'loadScree' => $loadScree,
             'prevID' => $prevID,
