@@ -14,6 +14,9 @@ return [
             'enableAutoLogin' => true,
             'loginUrl' => null
         ],
+        'cache' => [
+            'class' => 'yii\redis\Cache',
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
