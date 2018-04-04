@@ -1,7 +1,8 @@
 <?php
 return [
     'site' => [
-        'appName' => ''
+        'appName' => '',
+        'ICP' => ''
     ],
     'qiNiu' => [
         'domain' => '',
