@@ -1,6 +1,7 @@
-## About
+## [DotA2 · Join The Battle](https://dota2.lerzen.com)
 
-这个项目是基于 `React` 做的 `DotA2` 网站,计划提供以下内容
+
+这个项目是基于 `React` 做的 `DotA2` 网站，计划提供以下内容
 1. DotA2的所有载入动画
 2. DotA2的官方宣传视频和精美CG
 3. 民间大神制作的精美视频
