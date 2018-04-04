@@ -21,7 +21,7 @@ class LoadScreeController extends BaseController
         is_null($page) && $page = 0;
         $query = LoadScree::find()->orderBy('id asc');
         $total = $query->count();
-        $pageSize = 12;
+        $pageSize = 20;
         $pagination = new Pagination(['totalCount' => $total, 'defaultPageSize'=>$pageSize, 'page'=>$page]);
         $query->offset($pagination->offset)->limit($pagination->limit);
         $loadScrees = $query->asArray()->all();
