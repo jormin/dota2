@@ -2,6 +2,8 @@
 
 namespace common\models;
 
+use common\lib\Cache;
+
 /**
  * This is the model class for table "d_video".
  *
@@ -70,6 +72,28 @@ class Video extends \yii\db\ActiveRecord
             $this->updateTime = time();
         }
         return parent::beforeSave($insert);
+    }
+
+    /**
+     * 根据ID查找
+     *
+     * @param $id
+     * @param bool $isModel
+     * @return array|null|\common\models\LoadScree
+     */
+    public static function get($id, $isModel=false){
+        if($isModel){
+            return self::find()->where(['id'=>$id])->one();
+        }else{
+            $cacheName = 'VIDEO_'.$id;
+            $cache = Cache::get($cacheName);
+            if($cache === false){
+                $cache = self::find()->where(['id'=>$id])->asArray()->one();
+                Cache::set($cacheName, $cache);
+            }
+            $cache = self::combine($cache);
+            return $cache;
+        }
     }
 
     /**
