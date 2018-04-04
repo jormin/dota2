@@ -106,6 +106,7 @@ class Video extends \yii\db\ActiveRecord
         if(!$data){
             return $data;
         }
+        $data['cover'] = \Yii::$app->params['qiNiu']['domain'].$data['cover'];
         $data['url'] = \Yii::$app->params['qiNiu']['domain'].$data['key'];
         return $data;
     }
