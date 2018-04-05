@@ -12,6 +12,7 @@ use common\lib\Cache;
  * @property string $key
  * @property string $cover
  * @property integer $official
+ * @property string $author
  * @property integer $duration
  * @property integer $year
  * @property string $remark
@@ -40,7 +41,7 @@ class Video extends \yii\db\ActiveRecord
         return [
             [['name', 'key', 'cover'], 'required'],
             [['official', 'duration', 'year', 'viewAmount', 'createTime', 'updateTime'], 'integer'],
-            [['name', 'key'], 'string', 'max' => 150],
+            [['name', 'key', 'author'], 'string', 'max' => 150],
             [['remark'], 'string', 'max' => 255],
         ];
     }
@@ -56,6 +57,7 @@ class Video extends \yii\db\ActiveRecord
             'key' => '英文Key',
             'cover' => '封面',
             'official' => '是否官方',
+            'author' => '作者',
             'duration' => '时长',
             'year' => '年份',
             'remark' => '备注',
@@ -120,7 +122,7 @@ class Video extends \yii\db\ActiveRecord
             $arr[$key] = str_pad($item, 2, '0', STR_PAD_LEFT);
         }
         $data['duration'] = implode(':', $arr);
-        $data['tag'] = self::$tags[$data['official']];
+        $data['tag'] = $data['official'] == '1' ? '官方' : $data['author'];
         return $data;
     }
 }
