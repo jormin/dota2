@@ -27,7 +27,7 @@ class PictureController extends BaseController
         $query->offset($pagination->offset)->limit($pagination->limit);
         $pictures = $query->asArray()->all();
         foreach ($pictures as $key => $picture){
-            $picture = Picture::combine($picture);
+            $picture = Picture::combineSimple($picture);
             $pictures[$key] = $picture;
         }
         $data = [
