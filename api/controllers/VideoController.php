@@ -52,11 +52,13 @@ class VideoController extends BaseController
         $video['viewAmount'] += 1;
         $prev = Video::find()->where([
             'and',
+            ['<>', 'id', $id],
             ['<=', 'year', $video['year']],
             ['<=', 'createTime', $video['createTime']]
         ])->orderBy('year desc, createTime desc')->one();
         $next = Video::find()->where([
             'and',
+            ['<>', 'id', $id],
             ['>=', 'year', $video['year']],
             ['>=', 'createTime', $video['createTime']]
         ])->orderBy('year asc, createTime asc')->one();
