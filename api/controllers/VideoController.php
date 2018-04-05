@@ -4,6 +4,7 @@ namespace api\controllers;
 use common\controllers\BaseController;
 use common\models\Video;
 use yii\data\Pagination;
+use yii\db\Expression;
 
 /**
  * 视频
