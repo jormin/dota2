@@ -31,7 +31,7 @@ class PictureController extends BaseController
             $pictures[$key] = $picture;
         }
         $data = [
-            'item' => $pictures,
+            'list' => $pictures,
             'total' => $total,
             'page' => $page,
             'totalPages' => ceil($total/$pageSize),

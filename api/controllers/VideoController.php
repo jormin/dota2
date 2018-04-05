@@ -31,7 +31,7 @@ class VideoController extends BaseController
             $videos[$key] = $video;
         }
         $data = [
-            'videos' => $videos,
+            'list' => $videos,
             'total' => $total,
             'page' => $page,
             'totalPages' => ceil($total/$pageSize),
