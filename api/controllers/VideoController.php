@@ -20,7 +20,7 @@ class VideoController extends BaseController
     public function actionIndex(){
         $page = $this->getParam('page');
         is_null($page) && $page = 0;
-        $query = Video::find()->orderBy('id asc');
+        $query = Video::find()->orderBy('year desc, id asc');
         $total = $query->count();
         $pageSize = 20;
         $pagination = new Pagination(['totalCount' => $total, 'defaultPageSize'=>$pageSize, 'page'=>$page]);
