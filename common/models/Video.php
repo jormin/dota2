@@ -21,6 +21,9 @@ use common\lib\Cache;
  */
 class Video extends \yii\db\ActiveRecord
 {
+
+    public static $tags = ['玩家', '官方'];
+
     /**
      * @inheritdoc
      */
@@ -117,6 +120,7 @@ class Video extends \yii\db\ActiveRecord
             $arr[$key] = str_pad($item, 2, '0', STR_PAD_LEFT);
         }
         $data['duration'] = implode(':', $arr);
+        $data['tag'] = self::$tags[$data['official']];
         return $data;
     }
 }
