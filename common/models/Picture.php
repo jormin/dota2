@@ -105,11 +105,12 @@ class Picture extends \yii\db\ActiveRecord
         if(!$data){
             return $data;
         }
+        $data = self::combineSimple($data);
         $url = \Yii::$app->params['qiNiu']['domain'].$data['key'];
         $styles = \Yii::$app->params['qiNiu']['style'];
-        $data['thumb'] = $url.'-'.$styles['thumb'];
         $data['origin'] = $url.'-'.$styles['origin'];
         $data['preview'] = $url.'-'.$styles['preview'];
+        $data['name'] = str_replace('_', ' ', $data['name']);
         return $data;
     }
 
