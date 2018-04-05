@@ -50,8 +50,8 @@ class VideoController extends BaseController
         }
         Video::updateAll(['viewAmount'=>new Expression('viewAmount+1')], ['id'=>$id]);
         $video['viewAmount'] += 1;
-        $prev = Video::find()->where(['<', 'id', $id])->orderBy('id desc')->one();
-        $next = Video::find()->where(['>', 'id', $id])->orderBy('id asc')->one();
+        $prev = Video::find()->where(['<', 'id', $id])->orderBy('year desc, id desc')->one();
+        $next = Video::find()->where(['>', 'id', $id])->orderBy('year desc, id asc')->one();
         $data = [
             'item' => $video,
             'prevID' => $prev ? $prev['id'] : 0,
