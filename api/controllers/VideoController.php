@@ -53,12 +53,29 @@ class VideoController extends BaseController
         $prev = Video::find()->where([
             'and',
             ['<>', 'id', $id],
-            ['>=', 'year', $video['year']],
+            [
+                'or',
+                ['>', 'year', $video['year']],
+                [
+                    'and',
+                    ['=', 'year', $video['year']],
+                    ['>', 'createTime', $video['createTime']]
+                ]
+            ],
+            ['>=', 'createTime', $video['createTime']]
         ])->orderBy('year asc, createTime asc')->one();
         $next = Video::find()->where([
             'and',
             ['<>', 'id', $id],
-            ['<=', 'year', $video['year']],
+            [
+                'or',
+                ['<', 'year', $video['year']],
+                [
+                    'and',
+                    ['=', 'year', $video['year']],
+                    ['<', 'createTime', $video['createTime']]
+                ]
+            ],
         ])->orderBy('year desc, createTime desc')->one();
         $data = [
             'item' => $video,
