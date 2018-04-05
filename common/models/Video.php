@@ -112,7 +112,7 @@ class Video extends \yii\db\ActiveRecord
         }
         $data['cover'] = \Yii::$app->params['qiNiu']['domain'].$data['cover'];
         $data['url'] = \Yii::$app->params['qiNiu']['domain'].$data['key'];
-        $arr = [$data['duration']/3600, ($data['duration']%3600)/60, ($data['duration']%3600)%6];
+        $arr = [floor($data['duration']/3600), floor(($data['duration']%3600)/60), ($data['duration']%3600)%60];
         foreach ($arr as $key => $item){
             $arr[$key] = str_pad($item, 2, '0', STR_PAD_LEFT);
         }
