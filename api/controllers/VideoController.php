@@ -47,6 +47,8 @@ class VideoController extends BaseController
         if(!$video){
             $this->fail('参数错误');
         }
+        Video::updateAll(['viewAmount'=>new Expression('viewAmount+1')], ['id'=>$id]);
+        $video['viewAmount'] += 1;
         $prev = Video::find()->where(['<', 'id', $id])->orderBy('id desc')->one();
         $next = Video::find()->where(['>', 'id', $id])->orderBy('id asc')->one();
         $data = [

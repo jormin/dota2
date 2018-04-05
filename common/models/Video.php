@@ -12,8 +12,10 @@ use common\lib\Cache;
  * @property string $key
  * @property string $cover
  * @property integer $official
+ * @property integer $duration
  * @property integer $year
  * @property string $remark
+ * @property integer $viewAmount
  * @property integer $createTime
  * @property integer $updateTime
  */
@@ -34,7 +36,7 @@ class Video extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'key', 'cover'], 'required'],
-            [['official', 'year', 'createTime', 'updateTime'], 'integer'],
+            [['official', 'duration', 'year', 'viewAmount', 'createTime', 'updateTime'], 'integer'],
             [['name', 'key'], 'string', 'max' => 150],
             [['remark'], 'string', 'max' => 255],
         ];
@@ -51,8 +53,10 @@ class Video extends \yii\db\ActiveRecord
             'key' => '英文Key',
             'cover' => '封面',
             'official' => '是否官方',
+            'duration' => '时长',
             'year' => '年份',
             'remark' => '备注',
+            'viewAmount' => '浏览数量',
             'createTime' => '创建时间',
             'updateTime' => '更新时间',
         ];
@@ -79,7 +83,7 @@ class Video extends \yii\db\ActiveRecord
      *
      * @param $id
      * @param bool $isModel
-     * @return array|null|\common\models\LoadScree
+     * @return array|null|\common\models\Video
      */
     public static function get($id, $isModel=false){
         if($isModel){
@@ -108,6 +112,11 @@ class Video extends \yii\db\ActiveRecord
         }
         $data['cover'] = \Yii::$app->params['qiNiu']['domain'].$data['cover'];
         $data['url'] = \Yii::$app->params['qiNiu']['domain'].$data['key'];
+        $arr = [$data['duration']/3600, ($data['duration']%3600)/60, ($data['duration']%3600)%6];
+        foreach ($arr as $key => $item){
+            $arr[$key] = str_pad($item, 2, '0', STR_PAD_LEFT);
+        }
+        $data['duration'] = implode(':', $arr);
         return $data;
     }
 }

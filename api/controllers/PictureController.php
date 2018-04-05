@@ -2,35 +2,36 @@
 namespace api\controllers;
 
 use common\controllers\BaseController;
-use common\models\LoadScree;
+use common\models\Picture;
 use yii\data\Pagination;
+use yii\db\Expression;
 
 /**
  * 载入动画
  *
- * Class LoadScreeController
+ * Class PictureController
  * @package api\controllers
  */
-class LoadScreeController extends BaseController
+class PictureController extends BaseController
 {
     /**
-     * 分页获取加载动画
+     * 分页获取图片
      */
     public function actionIndex(){
         $page = $this->getParam('page');
         is_null($page) && $page = 0;
-        $query = LoadScree::find()->orderBy('id asc');
+        $query = Picture::find()->orderBy('id asc');
         $total = $query->count();
         $pageSize = 20;
         $pagination = new Pagination(['totalCount' => $total, 'defaultPageSize'=>$pageSize, 'page'=>$page]);
         $query->offset($pagination->offset)->limit($pagination->limit);
-        $loadScrees = $query->asArray()->all();
-        foreach ($loadScrees as $key => $loadScree){
-            $loadScree = LoadScree::combine($loadScree);
-            $loadScrees[$key] = $loadScree;
+        $pictures = $query->asArray()->all();
+        foreach ($pictures as $key => $picture){
+            $picture = Picture::combine($picture);
+            $pictures[$key] = $picture;
         }
         $data = [
-            'item' => $loadScrees,
+            'item' => $pictures,
             'total' => $total,
             'page' => $page,
             'totalPages' => ceil($total/$pageSize),
@@ -43,14 +44,16 @@ class LoadScreeController extends BaseController
      */
     public function actionDetail(){
         $id = $this->getParam('id');
-        $loadScree = LoadScree::get($id);
-        if(!$loadScree){
+        $picture = Picture::get($id);
+        if(!$picture){
             $this->fail('参数错误');
         }
-        $prev = LoadScree::find()->where(['<', 'id', $id])->orderBy('id desc')->one();
-        $next = LoadScree::find()->where(['>', 'id', $id])->orderBy('id asc')->one();
+        Picture::updateAll(['viewAmount'=>new Expression('viewAmount+1')], ['id'=>$id]);
+        $picture['viewAmount'] += 1;
+        $prev = Picture::find()->where(['<', 'id', $id])->orderBy('id desc')->one();
+        $next = Picture::find()->where(['>', 'id', $id])->orderBy('id asc')->one();
         $data = [
-            'loadScree' => $loadScree,
+            'item' => $picture,
             'prevID' => $prev ? $prev['id'] : 0,
             'nextID' => $next ? $next['id'] : 0,
         ];

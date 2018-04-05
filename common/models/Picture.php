@@ -9,19 +9,21 @@ use common\lib\Cache;
  * @property integer $id
  * @property string $name
  * @property string $key
+ * @property integer $type
  * @property integer $year
  * @property string $remark
+ * @property integer $viewAmount
  * @property integer $createTime
  * @property integer $updateTime
  */
-class LoadScree extends \yii\db\ActiveRecord
+class Picture extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'd_load_scree';
+        return 'd_picture';
     }
 
     /**
@@ -31,7 +33,7 @@ class LoadScree extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'key'], 'required'],
-            [['year', 'createTime', 'updateTime'], 'integer'],
+            [['type', 'year', 'viewAmount', 'createTime', 'updateTime'], 'integer'],
             [['name', 'key'], 'string', 'max' => 150],
             [['remark'], 'string', 'max' => 255],
         ];
@@ -46,8 +48,10 @@ class LoadScree extends \yii\db\ActiveRecord
             'id' => '主键ID',
             'name' => '名称',
             'key' => '英文Key',
+            'type' => '类型',
             'year' => '年份',
             'remark' => '备注',
+            'viewAmount' => '浏览次数',
             'createTime' => '创建时间',
             'updateTime' => '更新时间',
         ];
@@ -74,13 +78,13 @@ class LoadScree extends \yii\db\ActiveRecord
      *
      * @param $id
      * @param bool $isModel
-     * @return array|null|\common\models\LoadScree
+     * @return array|null|\common\models\Picture
      */
     public static function get($id, $isModel=false){
         if($isModel){
             return self::find()->where(['id'=>$id])->one();
         }else{
-            $cacheName = 'LOAD_SCREE_'.$id;
+            $cacheName = 'PICTURE_'.$id;
             $cache = Cache::get($cacheName);
             if($cache === false){
                 $cache = self::find()->where(['id'=>$id])->asArray()->one();
